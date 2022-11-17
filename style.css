@@ -1,0 +1,292 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    max-width: 100vh;
+    height: 100vh;
+    font-family: 'Fira Sans', sans-serif;
+    background-color: #ebebeb;
+    margin: auto;
+}
+
+h1, h2, h3 {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-weight: 900;
+    color: white;
+}
+
+h1 {
+    font-size: 2.8rem;
+}
+
+h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.9)
+}
+
+p {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: rgba(0,0,0,0.6);
+    line-height: 1.5rem;
+}
+
+span {
+    color: white;
+    font-weight: 700;
+}
+
+.join-btn {
+    text-transform: uppercase;
+    border: none;
+    border-radius: 50px;
+    padding: 0.8rem 2rem;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1);
+    font-weight: 700;
+    font-size: 0.6rem;
+    margin-top: 3.7rem;
+}
+
+.wrapper {
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "welcome welcome welcome learn learn learn"
+    "welcome welcome welcome join join join"
+    ". nav nav nav nav ."
+    "info info info info info info"
+    "cards cards cards cards cards cards"
+    "about about about about about about"
+    "how how how how how how"
+    "top-nav top-nav top-nav top-nav top-nav top-nav"
+    "footer footer footer footer footer footer";
+}
+
+.welcome {
+    grid-area: welcome;
+    height: 34rem;
+    background-color: #C7DDEA;
+    background-image: url("images/family.png");
+    background-repeat: no-repeat;
+    background-size: 60%;
+    background-position: 90% bottom; /*Bilden får lite margin till höger, 10%*/
+    padding: 4rem 4rem 11rem 6.5rem;
+}
+
+.welcome h1 {
+    color: black;
+    line-height: 2.8rem;;
+}
+
+.welcome p {
+    margin-top: 1rem;
+}
+
+.learn {
+    grid-area: learn;
+    background-color: #F17949;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.join {
+    grid-area: join;
+    background-color: #FFB939;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-bar {
+    grid-area: nav;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1.2rem 0;
+}
+
+.nav-bar__link {
+    text-decoration: none;
+    color:rgba(0, 0, 0, 0.4);
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.nav-bar__link--active {
+    color: black;
+}
+
+.info {
+    grid-area: info;
+    background-color: #A9A19E;
+    display: flex;
+    min-height: 38.5rem;
+}
+
+.info__join {
+    max-width: 60%;
+    padding: 6.3rem;
+}
+
+.info__text {
+    max-width: 40%;
+    padding-top: 6.3rem;
+    padding-right: 8rem;
+}
+
+.cards {
+    grid-area: cards;
+    background-color: #FFB939;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    gap: 1.7rem;
+}
+
+.card {
+    background-color: white;
+    max-width: 16rem;
+    border-radius: 5px;
+    border: 1px solid #ebebeb;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    padding: 1rem 1rem 1.7rem 1rem;
+    transform: translate(0, -50%);
+    margin-top: 2rem;
+    margin-bottom: -4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.card p {
+    font-size: 0.7rem;
+    font-weight: 700;
+    line-height: 1.1rem;
+    color: rgba(0,0,0,0.4);
+}
+
+.card--child, .card--adult, .card--old {
+    width: 100%;
+    height: 10rem;
+    border-radius: 5px;
+    margin-top: -3rem;
+}
+
+.card--child {
+    background-color: #C7DDEA;
+    background-image: url("images/child.png");
+    background-repeat: no-repeat;
+    background-size: 43%;
+    background-position: center -55%;
+
+}
+
+.card--adult {
+    background-color: #FFB939;
+    background-image: url("images/adult.png");
+    background-repeat: no-repeat;
+    background-size: 40%;
+    background-position: center -12%;
+}
+
+.card--old {
+    background-color: #F17949;
+    background-image: url("images/old.png");
+    background-repeat: no-repeat;
+    background-size: 60%;
+    background-position: center -15%;
+}
+
+.about {
+    grid-area: about;
+    max-height: 42.5rem;
+    background-color: #FFB939;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 6.5rem;
+}
+
+.about p {
+    max-width: 31.3rem;
+    line-height: 1.3rem;
+    margin-top: 0.5rem;
+}
+
+.how {
+    grid-area: how;
+    background-color: white;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: auto;
+}
+
+.how__box {
+    height: 21.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 3.1rem;
+    position: relative;
+}
+
+.how__box h2 {
+    color: rgba(0, 0, 0, 0.4);
+    font-size: 2.2rem;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+}
+
+.how__box p {
+    font-size: 1.1rem;
+    line-height: 1.3rem;
+}
+
+.how__box--blue {
+    background-color: #C7DDEA;
+}
+
+.how__box--blue h1 {
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.how__box--grey {
+    background-color: #ebebeb;
+}
+
+.how__box--orange {
+    background-color: #F17949;
+}
+
+.top-nav {
+    grid-area: top-nav;
+    background-color: #A9A19E;
+    color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.2rem 0;
+}
+
+.top-nav p {
+    font-size: 1.1rem;
+}
+
+.footer {
+    grid-area: footer;
+    min-height: 21.3rem;
+    background-color: #777574;
+}
